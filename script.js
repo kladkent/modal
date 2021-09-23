@@ -2,21 +2,19 @@
 
 //Variables
 const showModalButtons = document.querySelectorAll(".show-modal");
-const hiddenElements = document.querySelectorAll(".hidden");
+const modal = document.querySelector(".modal");
 const closeModal = document.querySelector(".close-modal");
 const overlay = document.querySelector(".overlay");
 
 //Functions
 const hideModal = function () {
-  for (let i = 0; i < hiddenElements.length; i++) {
-    hiddenElements[i].style.display = "none";
-  }
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
 };
 
 const showModal = function () {
-  for (let i = 0; i < hiddenElements.length; i++) {
-    hiddenElements[i].style.display = "block";
-  }
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
 };
 
 //DOM Events
