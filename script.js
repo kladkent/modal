@@ -18,9 +18,17 @@ const showModal = function () {
 };
 
 //DOM Events
-for (let i = 0; i < showModalButtons.length; i++) {
+for (let i = 0; i < showModalButtons.length; i++)
   showModalButtons[i].addEventListener("click", showModal);
-}
 
 closeModal.addEventListener("click", hideModal);
 overlay.addEventListener("click", hideModal);
+
+document.addEventListener("keydown", function (e) {
+  if (
+    e.key === "Escape" &&
+    !modal.classList.contains("hidden") &&
+    !overlay.classList.contains("hidden")
+  )
+    hideModal();
+});
